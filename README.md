@@ -10,6 +10,8 @@ The athlete dataset has all the information about the olympics except their regi
 
 The noc_regions has only the participants regions so we had to merge between both of them.
 
+medals_df.It represents number of medals a team got.We merged our data and medals_df on region and Team/NOC.
+
 
 
 # Our motivation:
@@ -54,11 +56,25 @@ Moreover,we tested if the country is hosting the olympics,would the performance 
 
 # 1) Does being the host improve the performance?
 
+1) make a new column called Host_Country where it has the hosting country of each record
 
-1) In order to see the effect of hosting on the performance, we had to convert each region to its country and added new column 'Host_Country'.
-2) We grouped the new data by 'Year','Host_Country','region','Medal' in a new dataframe and filled the null values for each medal with 0 (new columns Bronze, Gold, Silver), then we added cloumn 'Is_Host' to check if the region is the same hosting country or not.The column's values are either 1 if hosting,0 if not.
-3) We added a new column to calculate the total medals for each country in each year, then we sorted it ascendingly in a new dataframe.
-4) We plotted 3 graphs to prove how the countries' performance is affected due to their hosting.
+2) By applying the method host_country it takes the city the Olympics was hosted in and assigns the host country
+
+3) In a new dataframe medals_hosting_or_not we get the number of Gold - Bronze - Silver - Total Medals for each year for each region and also having the host coutry at that year
+
+4) Adds a new feature where Is_host is added to each record
+
+5) show countries and number of medals they have won using: .head() function
+
+6) visualize top 10 countries and average of medals they have won using: scatter plot
+
+7) visualize total medals per years for hosting and non hosting countries using: scatter plot
+
+8) comparing means when hosting and not hosting using: area graph
+
+9) We added a new column to calculate the total medals for each country in each year, then we sorted it ascendingly in a new dataframe.
+
+10) We plotted 3 graphs to prove how the countries' performance is affected due to their hosting.
 
 
 # 2) Is there characteristics that improve the chances of winning a medal?
@@ -70,6 +86,30 @@ Moreover,we tested if the country is hosting the olympics,would the performance 
 5) We plotted a graph to show men medals per edition of the Games.
 6) We plotted a pie chart, 2 scatter plots to show the relationship between performance and season.
 
+*   comparing number of females and males winning bronze, silver and gold medals using: 
+violinplot
+*   Games characteristics
+    *   in Weightlifting game, determine weight and height characteristics to win medals among males and females using:
+        violinplot
+    *   in Basketball game, determine height characteristics to win medals using:
+        pointplot
+    *   in Gymnastics game, determine age characteristics to win medals among males and females using:
+         scatterplot
+*   Some characteristics
+  *   determine age characteristics for athletic participants using:
+        Bar chart
+  *   determine age characteristics to win medals using:
+        violinplot
+  *   determine reogon characteristics to win medals using:
+       Bar chart
+  *   determine variation of females and males Athletes over time using: linear graphs
+  *   determine variation of Sports for femlaes and males participants over time using: linear praphs
+    *   determine variation of femlaes and males to win medals per edition of the Game: Bar chart
+  *   determine season characteristics to win medals using:  Python turtle and scatterplot
+
+
+
+
 
 # 3) Does the performance of a region improve after recieving their first Gold medal?
 
@@ -77,6 +117,9 @@ Moreover,we tested if the country is hosting the olympics,would the performance 
 2) We then sort them by the year and groupby the region
 3) We then get the first occurance of the gold medal in the history of the region
 4) We then plot the total number of medals before receiving the first gold medal and then after 
+5) Get the number of medals before receiving the first gold medal: lineplot
+6) Get the number of medals after receiving the first gold medal: lineplot
+7) determine number of medals won by Japan - Egypt - Armenia before and after winning gold medal using: lineplot
 
 
 
@@ -86,7 +129,7 @@ Moreover,we tested if the country is hosting the olympics,would the performance 
 example:
 
 
-![image](https://user-images.githubusercontent.com/82681541/145730390-ce92f266-ac62-4b17-a814-6ffd1ca6cbec.png)
+![image](https://user-images.githubusercontent.com/85845088/147889670-9328b9a0-6574-41f4-9816-385810bc2f29.png)
 
 
 2) When we asked the secomd question (Is there characteristics that improve the chances of winning a medal?) and after reviewing the correlation between some characteristics and winning medals (for example relation between weight and weightlifting w.r.t the Sex) we found out that there are some characteristics that increases the chance of winning and award
@@ -94,7 +137,8 @@ example:
 example:
 
 
-![image](https://user-images.githubusercontent.com/82681541/145730529-129c0ec1-bc95-4be6-81d0-e87667fc6d64.png)
+![image](https://user-images.githubusercontent.com/85845088/147889549-23dbc48c-b859-46e3-8ec4-85cab4e2fc61.png)
+
 
 
 
